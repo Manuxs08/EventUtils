@@ -5,5 +5,5 @@ before_install:
   - sdk install gradle 9.7.1
   - sdk use gradle 9.7.1
 
-build:
-  - gradle installDist
+install:
+  - gradle jar
