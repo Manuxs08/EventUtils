@@ -1,9 +1,0 @@
-jdk:
-  - openjdk21
-
-before_install:
-  - sdk install gradle 9.7.1
-  - sdk use gradle 9.7.1
-
-install:
-  - gradle jar
