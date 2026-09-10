@@ -1,0 +1,10 @@
+name: EventUtils
+version: '${version}'
+
+main: manuxs.eventutils.EventUtils
+bootstrapper: manuxs.eventutils.EventUtilsBootstrap
+api-version: '1.21.1'
+load: POSTWORLD
+softdepend: ["PlaceholderAPI"]
+
+authors: [ Manuxs ]

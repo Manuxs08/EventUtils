@@ -1,0 +1,12 @@
+pvp: true
+hunger: true
+ambient_damage: true
+chat: true
+mob_damage: true
+eliminate_on_death: false
+hide_join_message: false
+hide_leave_message: false
+default_team: ""
+spawn:
+  location: []
+  radius: 0
