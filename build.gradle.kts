@@ -1,6 +1,20 @@
 plugins {
     id("java-library")
     id("xyz.jpenilla.run-paper") version "2.3.1"
+    id("maven-publish")
+}
+
+afterEvaluate {
+    publishing{
+        publications{
+            create<MavenPublication>("mavenJava"){
+                from(components["java"])
+                groupId = "com.github.manuxs"
+                artifactId = "eventutils"
+                version = "1.0.0"
+            }
+        }
+    }
 }
 
 repositories {
