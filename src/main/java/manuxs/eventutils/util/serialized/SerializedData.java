@@ -7,7 +7,7 @@ public class SerializedData<T> {
     private static final String prefix = "[SerializedInstruction]";
     private final String category;
     private final SerializedType<T> type;
-    private final T value;
+    private T value;
 
     private SerializedData(String category, SerializedType<T> type, T value){
         this.category = category;
@@ -47,6 +47,10 @@ public class SerializedData<T> {
 
     public T value(){
         return this.value;
+    }
+
+    public void setValue(T value){
+        this.value = value;
     }
 
     public static String[] splitData(String message){

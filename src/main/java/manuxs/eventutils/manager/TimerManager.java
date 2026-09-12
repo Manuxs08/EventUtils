@@ -19,6 +19,10 @@ public class TimerManager {
         return TIMER_DURATION_MS;
     }
 
+    public static long remainingDuration(){
+        return TIMER_DURATION_MS-System.currentTimeMillis();
+    }
+
     public static void start(Server server, TimerTime timerTime){
         TIMER_DURATION_MS = System.currentTimeMillis() + timerTime.getMillis();
         SerializedData<String> description_data = SerializedData.create("timer.description",SerializedTypes.STRING,DESCRIPTION);
@@ -39,6 +43,10 @@ public class TimerManager {
 
         TimerEvent timerEvent = new TimerEvent(server, TimerEvent.State.FINISH);
         timerEvent.callEvent();
+    }
+
+    public static String description(){
+        return DESCRIPTION;
     }
 
     public static void setDescription(Server server, String description){

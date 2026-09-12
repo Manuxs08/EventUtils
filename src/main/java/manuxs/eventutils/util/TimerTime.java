@@ -44,15 +44,16 @@ public class TimerTime {
         return this.millis;
     }
 
-    public void setMillis(long millis) {
+    public TimerTime setMillis(long millis) {
         this.millis = Math.max(0L, millis);
         this.updateFromMillis();
         this.screen_time_txt = String.format("%02d:%02d:%02d", this.hours, this.minutes, this.seconds);
         this.formatted_time_txt = this.hours + "h " + this.minutes + "m " + this.seconds + "s";
+        return this;
     }
 
     private void updateFromMillis() {
-        int raw_seconds = (int)Math.ceil((double)this.millis / (double)1000.0F);
+        int raw_seconds = (int)Math.floor((double)this.millis / (double)1000.0F);
         this.hours = raw_seconds / 3600;
         raw_seconds %= 3600;
         this.minutes = raw_seconds / 60;
